@@ -12,7 +12,17 @@ script = ExtResource("1_ih34y")
 [node name="Seed" parent="." instance=ExtResource("1_aiam3")]
 position = Vector2(640, 480)
 
-[node name="Nutrient Counter" parent="." instance=ExtResource("3_eq6ta")]
+[node name="Resources" type="Node2D" parent="."]
 
-[node name="Nutrient Spawner" parent="." instance=ExtResource("4_vvy3u")]
+[node name="Nutrient" parent="Resources" instance=ExtResource("5_rk3o0")]
+position = Vector2(757, 567)
+
+[node name="Counters" type="Node2D" parent="."]
+
+[node name="Nutrient Counter" parent="Counters" instance=ExtResource("3_eq6ta")]
+visible = false
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="Nutrient Spawner" parent="Spawners" instance=ExtResource("4_vvy3u")]
 scene = ExtResource("5_rk3o0")

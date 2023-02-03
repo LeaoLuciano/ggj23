@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://tmyyosrbi2x7"]
+[gd_scene load_steps=4 format=3 uid="uid://tmyyosrbi2x7"]
+
+[ext_resource type="Script" path="res://scenes/items/resource.gd" id="1_2faba"]
+[ext_resource type="Script" path="res://scenes/items/nutrient.gd" id="1_v4u2f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08635"]
 
 [node name="Nutrient" type="Area2D"]
+script = ExtResource("1_v4u2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_08635")
+
+[node name="Resource" type="Node" parent="."]
+script = ExtResource("1_2faba")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

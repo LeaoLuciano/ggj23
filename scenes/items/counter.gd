@@ -1,18 +1,17 @@
 extends Node2D
 
-enum Type {
-	Nutrient
-} 
-
-@export var type := Type.Nutrient
+@export var type := Recurso.ResourceType.Nutrient
 @export var count := 0
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	add_to_group("counter"+str(type))
+	
+func connect_resource(resource : Recurso):
+	resource.add_resource.connect(Callable(self, "add"))
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	pass
+
+func add(amount : int):
+	print(amount)
 	pass
