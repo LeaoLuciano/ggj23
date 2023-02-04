@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://wyp2cel5mgsm"]
+[gd_scene load_steps=3 format=3 uid="uid://wyp2cel5mgsm"]
 
 [ext_resource type="Script" path="res://scenes/items/spawner.gd" id="1_m8fel"]
+[ext_resource type="PackedScene" uid="uid://tmyyosrbi2x7" path="res://scenes/items/nutrient.tscn" id="2_w58ak"]
 
 [node name="spawner" type="Node"]
 script = ExtResource("1_m8fel")
+scene = ExtResource("2_w58ak")
+area = Rect2(400, 240, 400, 240)
+spawn_time = 10
+despawn_time = 5
+
+[node name="Spawn" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Despawn" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="timeout" from="Spawn" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
