@@ -25,17 +25,19 @@ position = Vector2(362, 190)
 [node name="Counters" type="Node2D" parent="."]
 
 [node name="Nutrient Counter" parent="Counters" instance=ExtResource("3_eq6ta")]
+position = Vector2(13, 571)
 
 [node name="WaterCounter" parent="Counters" instance=ExtResource("3_eq6ta")]
+position = Vector2(13, 617)
 type = 1
 
 [node name="SunCounter" parent="Counters" instance=ExtResource("3_eq6ta")]
+position = Vector2(13, 662)
 type = 2
 
 [node name="Spawners" type="Node2D" parent="."]
 
 [node name="Nutrient Spawner" parent="Spawners" instance=ExtResource("4_vvy3u")]
-scene = ExtResource("5_rk3o0")
 
 [node name="UpgradeMenu" parent="." node_paths=PackedStringArray("nutrient_counter", "water_counter", "sun_counter") instance=ExtResource("6_ijhpw")]
 nutrient_counter = NodePath("../Counters/Nutrient Counter")
