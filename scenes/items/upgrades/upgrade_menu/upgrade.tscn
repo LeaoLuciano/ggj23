@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://i83qiw33mmc6"]
+
+[ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/upgrade.gd" id="1_5ysrp"]
+
+[node name="Upgrade" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ysrp")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 11.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
