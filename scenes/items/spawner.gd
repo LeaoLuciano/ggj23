@@ -6,16 +6,15 @@ extends Node
 @export var despawn_time : int
 var scene_instance
 
-func _on_ready():
-	scene_instance = scene.instantiate()
-	add_child(scene_instance)
-
 func _on_timer_timeout():
 	
 	var pos_x = randf() * (area.size[0]) + area.position[0]
 	var pos_y = randf() * (area.size[1]) + area.position[1]
 	
 	#print(pos_x, pos_y)
+	
+	var scene_instance = scene.instantiate()
+	Locator.get_simulation().add_child(scene_instance)
 	scene_instance.position = Vector2(pos_x, pos_y)
 	
 	#Tempo para spawnar aleatório

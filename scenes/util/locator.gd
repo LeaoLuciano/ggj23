@@ -12,3 +12,6 @@ func get_counters(type : Recurso.ResourceType):
 
 func get_simulation() -> Node2D:
 	return get_tree().get_nodes_in_group("simulation")[0]
+	
+func get_plant() -> Node:
+	return get_tree().get_nodes_in_group("tree")[0]

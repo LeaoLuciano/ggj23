@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1d5xp62qneid"]
+
+[ext_resource type="Script" path="res://scenes/tree/Drainer.gd" id="1_cf176"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0jdn"]
+
+[node name="root" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5.71021, 12.3299)
+shape = SubResource("CapsuleShape2D_f0jdn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Drainer" type="Node" parent="."]
+script = ExtResource("1_cf176")
+type = 1

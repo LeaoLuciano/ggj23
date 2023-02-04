@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://corrg6ek0avtm"]
+[gd_scene load_steps=4 format=3 uid="uid://corrg6ek0avtm"]
+
+[ext_resource type="Script" path="res://scenes/tree/tree.gd" id="1_iyqtl"]
+[ext_resource type="PackedScene" uid="uid://cmj4tkkqs4ryh" path="res://scenes/tree/seed.tscn" id="2_cqfvn"]
+[ext_resource type="PackedScene" uid="uid://1d5xp62qneid" path="res://scenes/tree/root.tscn" id="3_d2jtl"]
 
 [node name="Tree" type="Node2D"]
+script = ExtResource("1_iyqtl")
+
+[node name="Core" type="Node2D" parent="."]
+
+[node name="Seed" parent="Core" instance=ExtResource("2_cqfvn")]
+
+[node name="Parts" type="Node2D" parent="."]
+
+[node name="root" parent="Parts" instance=ExtResource("3_d2jtl")]
