@@ -3,7 +3,6 @@ extends Node
 func get_world() -> Node:
 	return get_tree().get_nodes_in_group("world")[0]
 
-
 func get_resources(type : Recurso.ResourceType):
 	return get_tree().get_nodes_in_group(str(type))
 

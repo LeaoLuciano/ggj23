@@ -10,8 +10,3 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		$Resource.add(1)
-		queue_free()

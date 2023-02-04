@@ -16,5 +16,3 @@ shape = SubResource("CircleShape2D_08635")
 [node name="Resource" type="Node" parent="."]
 script = ExtResource("2_xiro2")
 type = 1
-
-[connection signal="input_event" from="." to="." method="_on_input_event"]

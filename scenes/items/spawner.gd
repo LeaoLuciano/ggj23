@@ -14,8 +14,8 @@ func _on_timer_timeout():
 	#print(pos_x, pos_y)
 	
 	var scene_instance = scene.instantiate()
-	Locator.get_simulation().add_child(scene_instance)
 	scene_instance.position = Vector2(pos_x, pos_y)
+	Locator.get_simulation().add_child(scene_instance)
 	
 	#Tempo para spawnar aleatório
 	$Spawn.wait_time = randf() * (spawn_time - 1) + 1
