@@ -26,4 +26,4 @@ func _on_timer_timeout():
 	nutrient_counter.count += nutrient_production_rate
 	water_counter.count += water_production_rate
 	sun_counter.count += sun_production_rate
-	print("Nutrient: " + str(nutrient_counter.count) + " Water: " + str(water_counter.count) + " Sun: " + str(sun_counter.count))
+	#print("Nutrient: " + str(nutrient_counter.count) + " Water: " + str(water_counter.count) + " Sun: " + str(sun_counter.count))

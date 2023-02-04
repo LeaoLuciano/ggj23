@@ -17,7 +17,10 @@ var sun_cost : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Button.text = button_text
+	pass
+	
+func _process(delta):
+	$Button/Sprite2D/Label.text = button_text + "\n" + "N: " + str(nutrient_cost) + " A: " + str(water_cost) + " S: " + str(sun_cost)
 
 func can_buy() -> bool:
 	var nutrient_amount = upgrade_man.nutrient_counter.count

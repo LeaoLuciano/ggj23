@@ -17,7 +17,7 @@ script = ExtResource("1_uj27u")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(143, 264)
-scale = Vector2(2.139, 2)
+scale = Vector2(2, 1.87)
 texture = ExtResource("1_qs1es")
 
 [node name="TabsButtons" type="HBoxContainer" parent="Sprite2D" node_paths=PackedStringArray("tree_tab", "nutrient_tab", "water_tab", "sun_tab")]
@@ -70,7 +70,7 @@ size_flags_vertical = 3
 type = "nutrient"
 production_rate = 10
 upgrade_man = NodePath("../../../..")
-button_text = "A"
+button_text = "+10 nutrientes/s"
 
 [node name="NutrientUpgrades" type="ScrollContainer" parent="Sprite2D"]
 visible = false
@@ -91,7 +91,7 @@ size_flags_vertical = 3
 type = "water"
 production_rate = 10
 upgrade_man = NodePath("../../../..")
-button_text = "B"
+button_text = "+10 água/s"
 nutrient_cost = 100
 
 [node name="WaterUpgrades" type="ScrollContainer" parent="Sprite2D"]
@@ -113,7 +113,7 @@ size_flags_vertical = 3
 type = "sun"
 production_rate = 10
 upgrade_man = NodePath("../../../..")
-button_text = "C"
+button_text = "+10 sol/s"
 nutrient_cost = 200
 water_cost = 200
 
