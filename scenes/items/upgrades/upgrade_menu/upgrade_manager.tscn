@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://dl7im48sd816m"]
 
-[ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/upgrade_menu.gd" id="1_pddx3"]
 [ext_resource type="Texture2D" uid="uid://de6htejo3hw7g" path="res://scenes/items/upgrades/upgrade_menu/upgrade_menu.png.png" id="1_qs1es"]
+[ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/upgrade_manager.gd" id="1_uj27u"]
 [ext_resource type="PackedScene" uid="uid://i83qiw33mmc6" path="res://scenes/items/upgrades/upgrade_menu/upgrade.tscn" id="2_y1ylx"]
 [ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/tabs_buttons.gd" id="3_kl1r8"]
 
-[node name="UpgradeMenu" type="Control"]
+[node name="UpgradeManager" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pddx3")
+script = ExtResource("1_uj27u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -88,10 +88,11 @@ alignment = 1
 [node name="Upgrade" parent="Sprite2D/NutrientUpgrades/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
 layout_mode = 2
 size_flags_vertical = 3
-type = "nutrient"
+type = "water"
 production_rate = 10
 upgrade_man = NodePath("../../../..")
 button_text = "B"
+nutrient_cost = 100
 
 [node name="WaterUpgrades" type="ScrollContainer" parent="Sprite2D"]
 visible = false
@@ -109,10 +110,12 @@ alignment = 1
 [node name="Upgrade" parent="Sprite2D/WaterUpgrades/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
 layout_mode = 2
 size_flags_vertical = 3
-type = "nutrient"
+type = "sun"
 production_rate = 10
 upgrade_man = NodePath("../../../..")
 button_text = "C"
+nutrient_cost = 200
+water_cost = 200
 
 [node name="SunUpgrades" type="ScrollContainer" parent="Sprite2D"]
 visible = false

@@ -1,7 +1,9 @@
 class_name Recurso extends Node
 
 enum ResourceType{
-	Nutrient
+	Nutrient,
+	Water,
+	Sun
 }
 
 signal add_resource(amount : int)
