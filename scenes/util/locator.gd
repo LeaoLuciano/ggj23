@@ -9,3 +9,6 @@ func get_resources(type : Recurso.ResourceType):
 
 func get_counters(type : Recurso.ResourceType):
 	return get_tree().get_nodes_in_group("counter"+str(type))
+
+func get_simulation() -> Node2D:
+	return get_tree().get_nodes_in_group("simulation")[0]

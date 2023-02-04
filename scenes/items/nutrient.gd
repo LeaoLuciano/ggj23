@@ -13,5 +13,5 @@ func _process(delta):
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		print("clicou")
 		$Resource.add(1)
+		queue_free()

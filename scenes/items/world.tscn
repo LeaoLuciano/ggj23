@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bt3ljjea5oh6"]
+[gd_scene load_steps=8 format=3 uid="uid://dibew2ltgf3uo"]
 
 [ext_resource type="PackedScene" uid="uid://cmj4tkkqs4ryh" path="res://scenes/tree/seed.tscn" id="1_aiam3"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_ih34y"]
 [ext_resource type="PackedScene" uid="uid://cpbp0lphx2vrn" path="res://scenes/items/counter.tscn" id="3_eq6ta"]
+[ext_resource type="PackedScene" uid="uid://tlj640lkq3y8" path="res://scenes/items/cloud.tscn" id="4_3x06h"]
 [ext_resource type="PackedScene" uid="uid://wyp2cel5mgsm" path="res://scenes/items/spawner.tscn" id="4_vvy3u"]
 [ext_resource type="PackedScene" uid="uid://tmyyosrbi2x7" path="res://scenes/items/nutrient.tscn" id="5_rk3o0"]
 [ext_resource type="PackedScene" uid="uid://dl7im48sd816m" path="res://scenes/items/upgrades/upgrade_menu/upgrade_manager.tscn" id="6_ijhpw"]
@@ -13,22 +14,22 @@ script = ExtResource("1_ih34y")
 [node name="Seed" parent="." instance=ExtResource("1_aiam3")]
 position = Vector2(640, 480)
 
-[node name="Resources" type="Node2D" parent="."]
+[node name="Simulation" type="Node2D" parent="." groups=["simulation"]]
 
-[node name="Nutrient" parent="Resources" instance=ExtResource("5_rk3o0")]
+[node name="Nutrient" parent="Simulation" instance=ExtResource("5_rk3o0")]
 position = Vector2(757, 567)
+
+[node name="Nuvem" parent="Simulation" instance=ExtResource("4_3x06h")]
+position = Vector2(362, 190)
 
 [node name="Counters" type="Node2D" parent="."]
 
 [node name="Nutrient Counter" parent="Counters" instance=ExtResource("3_eq6ta")]
-visible = false
 
 [node name="WaterCounter" parent="Counters" instance=ExtResource("3_eq6ta")]
-visible = false
 type = 1
 
 [node name="SunCounter" parent="Counters" instance=ExtResource("3_eq6ta")]
-visible = false
 type = 2
 
 [node name="Spawners" type="Node2D" parent="."]
