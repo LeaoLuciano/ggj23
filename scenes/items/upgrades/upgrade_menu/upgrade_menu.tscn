@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl7im48sd816m"]
+[gd_scene load_steps=5 format=3 uid="uid://dl7im48sd816m"]
 
 [ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/upgrade_menu.gd" id="1_pddx3"]
 [ext_resource type="Texture2D" uid="uid://de6htejo3hw7g" path="res://scenes/items/upgrades/upgrade_menu/upgrade_menu.png.png" id="1_qs1es"]
 [ext_resource type="PackedScene" uid="uid://i83qiw33mmc6" path="res://scenes/items/upgrades/upgrade_menu/upgrade.tscn" id="2_y1ylx"]
+[ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/tabs_buttons.gd" id="3_kl1r8"]
 
 [node name="UpgradeMenu" type="Control"]
 layout_mode = 3
@@ -19,26 +20,126 @@ position = Vector2(143, 264)
 scale = Vector2(2.139, 2)
 texture = ExtResource("1_qs1es")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Sprite2D"]
-offset_left = -62.0
+[node name="TabsButtons" type="HBoxContainer" parent="Sprite2D" node_paths=PackedStringArray("tree_tab", "nutrient_tab", "water_tab", "sun_tab")]
+offset_left = -59.0
 offset_top = -125.0
+offset_right = 56.0
+offset_bottom = -104.0
+alignment = 1
+script = ExtResource("3_kl1r8")
+tree_tab = NodePath("../TreeUpgrades")
+nutrient_tab = NodePath("../NutrientUpgrades")
+water_tab = NodePath("../WaterUpgrades")
+sun_tab = NodePath("../SunUpgrades")
+
+[node name="TreeTab" type="Button" parent="Sprite2D/TabsButtons"]
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="NutrientTab" type="Button" parent="Sprite2D/TabsButtons"]
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="WaterTab" type="Button" parent="Sprite2D/TabsButtons"]
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="SunTab" type="Button" parent="Sprite2D/TabsButtons"]
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="TreeUpgrades" type="ScrollContainer" parent="Sprite2D"]
+offset_left = -59.0
+offset_top = -101.0
 offset_right = 57.0
-offset_bottom = 127.0
+offset_bottom = 122.0
 horizontal_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/TreeUpgrades"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Upgrade" parent="Sprite2D/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
+[node name="Upgrade" parent="Sprite2D/TreeUpgrades/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
 layout_mode = 2
 size_flags_vertical = 3
 type = "nutrient"
 production_rate = 10
 upgrade_man = NodePath("../../../..")
+button_text = "A"
+
+[node name="NutrientUpgrades" type="ScrollContainer" parent="Sprite2D"]
+visible = false
+offset_left = -59.0
+offset_top = -101.0
+offset_right = 57.0
+offset_bottom = 122.0
+horizontal_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/NutrientUpgrades"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Upgrade" parent="Sprite2D/NutrientUpgrades/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
+layout_mode = 2
+size_flags_vertical = 3
+type = "nutrient"
+production_rate = 10
+upgrade_man = NodePath("../../../..")
+button_text = "B"
+
+[node name="WaterUpgrades" type="ScrollContainer" parent="Sprite2D"]
+visible = false
+offset_left = -59.0
+offset_top = -101.0
+offset_right = 57.0
+offset_bottom = 122.0
+horizontal_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/WaterUpgrades"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Upgrade" parent="Sprite2D/WaterUpgrades/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
+layout_mode = 2
+size_flags_vertical = 3
+type = "nutrient"
+production_rate = 10
+upgrade_man = NodePath("../../../..")
+button_text = "C"
+
+[node name="SunUpgrades" type="ScrollContainer" parent="Sprite2D"]
+visible = false
+offset_left = -59.0
+offset_top = -101.0
+offset_right = 57.0
+offset_bottom = 122.0
+horizontal_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/SunUpgrades"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Upgrade" parent="Sprite2D/SunUpgrades/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
+layout_mode = 2
+size_flags_vertical = 3
+type = "nutrient"
+production_rate = 10
+upgrade_man = NodePath("../../../..")
+button_text = "D"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="pressed" from="Sprite2D/TabsButtons/TreeTab" to="Sprite2D/TabsButtons" method="_on_tree_tab_pressed"]
+[connection signal="pressed" from="Sprite2D/TabsButtons/NutrientTab" to="Sprite2D/TabsButtons" method="_on_nutrient_tab_pressed"]
+[connection signal="pressed" from="Sprite2D/TabsButtons/WaterTab" to="Sprite2D/TabsButtons" method="_on_water_tab_pressed"]
+[connection signal="pressed" from="Sprite2D/TabsButtons/SunTab" to="Sprite2D/TabsButtons" method="_on_sun_tab_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
