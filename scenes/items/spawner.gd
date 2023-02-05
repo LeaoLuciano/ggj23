@@ -4,18 +4,18 @@ extends Node
 @export var area : Rect2
 @export var spawn_time : int
 @export var despawn_time : int
+var spawn_amount : int = 1
 var scene_instance
 
 func _on_timer_timeout():
-	
-	var pos_x = randf() * (area.size[0]) + area.position[0]
-	var pos_y = randf() * (area.size[1]) + area.position[1]
+	for i in spawn_amount:
+		var pos_x = randf() * (area.size[0]) + area.position[0]
+		var pos_y = randf() * (area.size[1]) + area.position[1]
 	
 	#print(pos_x, pos_y)
-	
-	var scene_instance = scene.instantiate()
-	scene_instance.position = Vector2(pos_x, pos_y)
-	Locator.get_simulation().add_child(scene_instance)
+		var scene_instance = scene.instantiate()
+		scene_instance.position = Vector2(pos_x, pos_y)
+		Locator.get_simulation().add_child(scene_instance)
 	
 	#Tempo para spawnar aleatório
 	$Spawn.wait_time = randf() * (spawn_time - 1) + 1

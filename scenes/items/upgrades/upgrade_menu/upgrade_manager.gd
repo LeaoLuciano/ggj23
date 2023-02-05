@@ -15,6 +15,9 @@ var sun_production_rate : int = 0
 @export
 var tree : Node2D
 
+@export var nutrient_spawner : Node
+@export var cloud_spawner : Node
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -26,7 +29,5 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	nutrient_counter.count += nutrient_production_rate
-	water_counter.count += water_production_rate
-	sun_counter.count += sun_production_rate
+	pass
 	#print("Nutrient: " + str(nutrient_counter.count) + " Water: " + str(water_counter.count) + " Sun: " + str(sun_counter.count))

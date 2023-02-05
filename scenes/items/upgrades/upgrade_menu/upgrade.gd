@@ -44,6 +44,5 @@ func _on_button_pressed() -> void:
 	if can_buy():
 		take_resources()
 		match type:
-			"nutrient": upgrade_man.nutrient_production_rate += production_rate
-			"water": upgrade_man.water_production_rate += production_rate
-			"sun": upgrade_man.sun_production_rate += production_rate
+			"nutrient": upgrade_man.nutrient_spawner.spawn_amount += production_rate
+			"water": upgrade_man.cloud_spawner.spawn_amount += production_rate

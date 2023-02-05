@@ -53,11 +53,17 @@ type_name = "S"
 [node name="Nutrient Spawner" parent="Spawners" instance=ExtResource("4_vvy3u")]
 area = Rect2(150, 520, 1252, 411)
 
-[node name="UpgradeMenu" parent="." node_paths=PackedStringArray("nutrient_counter", "water_counter", "sun_counter", "tree") instance=ExtResource("6_ijhpw")]
+[node name="CloudSpawner" parent="Spawners" instance=ExtResource("4_vvy3u")]
+scene = ExtResource("4_3x06h")
+area = Rect2(30, 25, 260, 243)
+
+[node name="UpgradeMenu" parent="." node_paths=PackedStringArray("nutrient_counter", "water_counter", "sun_counter", "tree", "nutrient_spawner", "cloud_spawner") instance=ExtResource("6_ijhpw")]
 nutrient_counter = NodePath("../Counters/Nutrient Counter")
 water_counter = NodePath("../Counters/WaterCounter")
 sun_counter = NodePath("../Counters/SunCounter")
 tree = NodePath("../Simulation/Tree")
+nutrient_spawner = NodePath("../Spawners/Nutrient Spawner")
+cloud_spawner = NodePath("../Spawners/CloudSpawner")
 
 [node name="Backgrounduntitled" type="Sprite2D" parent="."]
 z_index = -2
