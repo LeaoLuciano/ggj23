@@ -1,19 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://tlj640lkq3y8"]
+[gd_scene load_steps=5 format=3 uid="uid://tlj640lkq3y8"]
 
 [ext_resource type="Script" path="res://scenes/items/cloud.gd" id="1_45cun"]
 [ext_resource type="PackedScene" uid="uid://ddvu7kg7fvxt8" path="res://scenes/items/water.tscn" id="2_eitcj"]
+[ext_resource type="Texture2D" uid="uid://dgysjdl11p1dr" path="res://sprites/cloud.png" id="3_qdge6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8fib"]
+radius = 8.43064
+height = 55.5778
 
 [node name="Cloud" type="Area2D"]
 script = ExtResource("1_45cun")
 water_scn = ExtResource("2_eitcj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
 rotation = 1.57079
 scale = Vector2(2.72814, 2.44702)
 shape = SubResource("CapsuleShape2D_a8fib")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5, -19)
+scale = Vector2(4, 4)
+texture = ExtResource("3_qdge6")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

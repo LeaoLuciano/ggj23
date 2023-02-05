@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddvu7kg7fvxt8"]
+[gd_scene load_steps=5 format=3 uid="uid://ddvu7kg7fvxt8"]
 
 [ext_resource type="Script" path="res://scenes/items/water.gd" id="1_nhl5n"]
+[ext_resource type="Texture2D" uid="uid://2r5fatnmge6h" path="res://sprites/water_drop.png" id="2_w5jlr"]
 [ext_resource type="Script" path="res://scenes/items/resource.gd" id="2_xiro2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08635"]
@@ -9,6 +10,9 @@
 script = ExtResource("1_nhl5n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("2_w5jlr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_08635")
