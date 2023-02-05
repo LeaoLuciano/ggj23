@@ -37,6 +37,7 @@ func take_resources() -> void:
 	upgrade_man.nutrient_counter.count -= nutrient_cost
 	upgrade_man.water_counter.count -= water_cost
 	upgrade_man.sun_counter.count -= sun_cost
+	
 
 func _on_button_pressed() -> void:
 	if can_buy():

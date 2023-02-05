@@ -2,8 +2,8 @@ extends Area2D
 
 @export var orbit_speed : float
 @export var sunbeam_scene : PackedScene
-var orbit_radius =600
-var center_point = Vector2(640, 720)
+var orbit_radius = 900
+var center_point = Vector2(640, 1000)
 var angle = 0.0
 
 # Called when the node enters the scene tree for the first time.

@@ -6,22 +6,28 @@
 
 [node name="Tree" type="Node2D"]
 script = ExtResource("1_iyqtl")
+level = 1
 
-[node name="Level 0" type="Node2D" parent="."]
+[node name="Level0" type="Node2D" parent="."]
+unique_name_in_owner = true
 visible = false
 
-[node name="Seed" parent="Level 0" instance=ExtResource("2_cqfvn")]
+[node name="Seed" parent="Level0" instance=ExtResource("2_cqfvn")]
 
-[node name="Level 1" type="Node2D" parent="."]
+[node name="Level1" type="Node2D" parent="."]
+unique_name_in_owner = true
 
-[node name="root" parent="Level 1" instance=ExtResource("3_d2jtl")]
+[node name="root1" parent="Level1" instance=ExtResource("3_d2jtl")]
+visible = false
 position = Vector2(-160, 100)
 rotation = 1.0472
 
-[node name="root3" parent="Level 1" instance=ExtResource("3_d2jtl")]
-position = Vector2(160, 100)
-rotation = -1.0472
-
-[node name="root2" parent="Level 1" instance=ExtResource("3_d2jtl")]
+[node name="root2" parent="Level1" instance=ExtResource("3_d2jtl")]
+visible = false
 position = Vector2(-13, 168)
 rotation = 0.00517797
+
+[node name="root3" parent="Level1" instance=ExtResource("3_d2jtl")]
+visible = false
+position = Vector2(160, 100)
+rotation = -1.0472
