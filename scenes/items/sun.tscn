@@ -10,7 +10,7 @@
 position = Vector2(0, 720)
 disable_mode = 2
 script = ExtResource("1_tba2c")
-orbit_speed = 0.5
+orbit_speed = 0.1
 sunbeam_scene = ExtResource("2_v03oo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,4 +24,7 @@ texture = ExtResource("3_3abd8")
 scale = Vector2(4.58337, 4.58337)
 shape = SubResource("CircleShape2D_2eppb")
 
+[node name="Delay" type="Timer" parent="."]
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

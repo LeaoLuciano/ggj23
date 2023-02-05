@@ -24,4 +24,8 @@ position = Vector2(5, -19)
 scale = Vector2(4, 4)
 texture = ExtResource("3_qdge6")
 
+[node name="Delay" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
