@@ -15,7 +15,6 @@ func enable():
 	parent.connect("area_entered", _drain)
 	
 func disable():
-	print("Disable")
 	enabled = false
 	parent.disconnect("area_entered", _drain)
 

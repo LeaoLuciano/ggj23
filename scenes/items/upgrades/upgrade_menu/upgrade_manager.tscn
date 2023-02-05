@@ -35,6 +35,8 @@ size_flags_vertical = 3
 script = ExtResource("4_4ih28")
 type = "root"
 upgrade_man = NodePath("../../..")
+button_text = "Grow Root"
+nutrient_cost = 20
 
 [node name="Upgrade2" parent="Sprite2D/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
 layout_mode = 2
@@ -42,21 +44,26 @@ size_flags_vertical = 3
 script = ExtResource("4_4ih28")
 type = "leaf"
 upgrade_man = NodePath("../../..")
+button_text = "Grow Leaf"
+nutrient_cost = 15
+water_cost = 10
 
 [node name="Upgrade3" parent="Sprite2D/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
 layout_mode = 2
 size_flags_vertical = 3
 type = "nutrient"
 upgrade_man = NodePath("../../..")
-button_text = "Spawn + Nutrients"
-nutrient_cost = 50
+button_text = "More Nutrients"
+nutrient_cost = 30
 
 [node name="Upgrade4" parent="Sprite2D/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
 layout_mode = 2
 size_flags_vertical = 3
 type = "water"
 upgrade_man = NodePath("../../..")
-button_text = "Spawn + Clouds"
+button_text = "More Clouds"
+nutrient_cost = 30
+sun_cost = 10
 
 [node name="Upgrade5" parent="Sprite2D/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
 layout_mode = 2
@@ -64,6 +71,9 @@ size_flags_vertical = 3
 script = ExtResource("4_4ih28")
 type = "levelup"
 upgrade_man = NodePath("../../..")
+button_text = "Grow Tree"
+nutrient_cost = 10
+water_cost = 10
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

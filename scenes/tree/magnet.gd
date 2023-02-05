@@ -36,8 +36,7 @@ func _attract(resource : Recurso):
 func set_delay(resource : Recurso):
 	if resource.magnet == self:
 		wait = true
-		print("A")
 		var timer = get_tree().create_timer(delay)
-		timer.timeout.connect(func() : self.wait = false; print("B") )
+		timer.timeout.connect(func() : self.wait = false)
 
 

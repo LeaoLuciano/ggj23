@@ -7,6 +7,8 @@ extends Node
 var spawn_amount : int = 1
 var scene_instance
 
+var queue = []
+
 func _on_timer_timeout():
 	for i in spawn_amount:
 		var pos_x = randf() * (area.size[0]) + area.position[0]
@@ -15,6 +17,7 @@ func _on_timer_timeout():
 	#print(pos_x, pos_y)
 		var scene_instance = scene.instantiate()
 		scene_instance.position = Vector2(pos_x, pos_y)
+		queue.push_back(scene_instance)
 		Locator.get_simulation().add_child(scene_instance)
 	
 	#Tempo para spawnar aleatório
@@ -24,5 +27,7 @@ func _on_timer_timeout():
 
 
 func _on_despawn_timeout():
-	print(get_tree())
+	var node = queue.pop_back()
+	node.queue_free()
+	#print(get_tree())
 

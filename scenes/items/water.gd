@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var g := Vector2(0, 40)
-var velocity = Vector2()
+var velocity = Vector2(0, 20)
 
 func _ready():
 	pass

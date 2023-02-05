@@ -35,18 +35,18 @@ position = Vector2(640, 480)
 
 [node name="Nutrient Counter" parent="Counters" instance=ExtResource("3_eq6ta")]
 position = Vector2(13, 571)
-count = 10
-type_name = "N"
+count = 0
+type_name = "Nutrient"
 
 [node name="WaterCounter" parent="Counters" instance=ExtResource("3_eq6ta")]
 position = Vector2(13, 617)
 type = 1
-type_name = "A"
+type_name = "Water"
 
 [node name="SunCounter" parent="Counters" instance=ExtResource("3_eq6ta")]
 position = Vector2(13, 662)
 type = 2
-type_name = "S"
+type_name = "Light"
 
 [node name="Spawners" type="Node2D" parent="."]
 

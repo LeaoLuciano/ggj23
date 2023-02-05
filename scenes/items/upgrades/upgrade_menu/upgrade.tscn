@@ -1,62 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://i83qiw33mmc6"]
+[gd_scene load_steps=3 format=3 uid="uid://i83qiw33mmc6"]
 
 [ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/upgrade.gd" id="1_5ysrp"]
 [ext_resource type="Texture2D" uid="uid://ksoe2w6w2ytk" path="res://scenes/items/upgrades/upgrade_menu/upgrade_button.png" id="2_o6kcp"]
-
-[sub_resource type="FontFile" id="FontFile_6dhyo"]
-face_index = null
-embolden = null
-transform = null
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
-cache/0/12/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/12/0/kerning_overrides/11/0 = Vector2(0, 0)
-cache/0/12/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/12/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/12/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/11/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/11/0/ascent = 0.0
-cache/0/11/0/descent = 0.0
-cache/0/11/0/underline_position = 0.0
-cache/0/11/0/underline_thickness = 0.0
-cache/0/11/0/scale = 1.0
-cache/0/11/0/kerning_overrides/12/0 = Vector2(0, 0)
-cache/0/11/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/11/0/kerning_overrides/11/0 = Vector2(0, 0)
-cache/0/11/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/11/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/10/0/kerning_overrides/12/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/11/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/10/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/13/0/ascent = 0.0
-cache/0/13/0/descent = 0.0
-cache/0/13/0/underline_position = 0.0
-cache/0/13/0/underline_thickness = 0.0
-cache/0/13/0/scale = 1.0
-cache/0/13/0/kerning_overrides/12/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/11/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/10/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/13/0 = Vector2(0, 0)
 
 [node name="Upgrade" type="Control"]
 layout_mode = 3
@@ -85,7 +30,6 @@ offset_left = -47.0
 offset_top = -15.0
 offset_right = 47.0
 offset_bottom = 15.0
-theme_override_fonts/font = SubResource("FontFile_6dhyo")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
