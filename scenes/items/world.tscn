@@ -11,9 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://by6xn005y2b0t" path="res://sprites/backgrounduntitled.png" id="8_5twrw"]
 
 [node name="World" type="Node2D" groups=["world"]]
+z_index = -1
 script = ExtResource("1_ih34y")
 
 [node name="Simulation" type="Node2D" parent="." groups=["simulation"]]
+
+[node name="Tree" parent="Simulation" instance=ExtResource("6_2avx7")]
+position = Vector2(640, 480)
 
 [node name="Nutrient" parent="Simulation" instance=ExtResource("5_rk3o0")]
 position = Vector2(757, 567)

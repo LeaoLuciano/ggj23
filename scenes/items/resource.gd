@@ -16,6 +16,7 @@ var force = null
 
 var vel := Vector2()
 var acc := Vector2() 
+var magnet
 
 func _ready():
 	add_to_group(str(type))
@@ -41,5 +42,7 @@ func _consume():
 	get_parent().queue_free()
 	
 func _on_input_event(viewport, event, shape_idx):
+	if type == ResourceType.Sun:
+		return
 	if event is InputEventMouseButton and event.pressed:
 		consume(0.0)

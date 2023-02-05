@@ -11,9 +11,5 @@ func _process(delta):
 	look_at(tree_pos)
 	var direction = (tree_pos - position).normalized()
 	position += direction * velocity
-
-
-func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
-		$Recurso.add(2)
+	if (position - tree_pos).length() < 2:
 		queue_free()

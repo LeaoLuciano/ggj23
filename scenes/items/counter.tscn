@@ -6,7 +6,10 @@
 
 [node name="Counter" type="Node2D" node_paths=PackedStringArray("resource_amount")]
 script = ExtResource("1_qicnn")
+type = null
+count = null
 resource_amount = NodePath("Sprite2D/Label")
+type_name = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(59.5, 20)

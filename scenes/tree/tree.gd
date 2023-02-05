@@ -4,35 +4,84 @@ extends Node2D
 
 var current_level := $Level0 
 
+var trunks = 0
+
 var limit_roots = 0
 var roots := 0
 
+var limit_leaves = 0
+var leaves := 0
+
 
 func _ready():
-	pass
+	for child in get_children():
+		child.propagate_call("disable")
+	_change_level(level)
 
 func _process(delta):
 	pass
 	
 func can_add_root() -> bool:
+	return true
 	return roots < limit_roots
+	
+func can_add_leaf() -> bool:
+	return trunks >= 1	
+	return leaves < limit_leaves and trunks >= 1
+
+
 
 func add_root():
-	if roots < limit_roots:
+	if can_add_root():
+		if roots >= limit_roots:
+			upgrade_root()
+			return
 		roots += 1
-		current_level.get_node("root" + str(roots)).visible = true
-		current_level.propagate_call("enable", [])
-		
-		
-	
+		var root = current_level.get_node("root" + str(roots))
+		var up = root.get_node("Upgradable")
+		up.level = 0
+		root.visible = true
+		root.propagate_call("enable", [])
+
 func add_leaf():
-	pass
+	if can_add_leaf():
+		if leaves >= limit_leaves:
+			upgrade_leaf()
+			return
+		leaves += 1
+		var leaf = current_level.get_node("leaf" + str(leaves))
+		var up = leaf.get_node("Upgradable")
+		up.level = 0
+		leaf.level = 0
+		leaf.visible = true
+		leaf.propagate_call("enable", [])	
+	
+func upgrade():
+	level += 1
+
+func upgrade_root():
+	_upgrade("root")
+
+func upgrade_leaf():
+	_upgrade("leaf")
+	
+func _upgrade(type : String):
+	var item = null
+	for child in current_level.get_children():	
+		if str(child).find(type) != -1:
+			if item == null or child.get_node("Upgradable").level < item.get_node("Upgradable").level:
+				item = child
+	item.propagate_call("upgrade")
+	item.get_node("Upgradable").level += 1
+	
 
 func change_level(_level : int) -> int:
 	call_deferred("_change_level", _level)
 	return _level
 
 func _change_level(_level : int):
+	if _level > 1:
+		return
 	disable_all()
 	for child in get_children():
 		child.visible = false
@@ -54,3 +103,6 @@ func _change_level(_level : int):
 
 func disable_all():
 	propagate_call("disable", [])
+
+func aaa():
+	add_root()

@@ -1,19 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://1d5xp62qneid"]
+[gd_scene load_steps=6 format=3 uid="uid://1d5xp62qneid"]
 
 [ext_resource type="Texture2D" uid="uid://e25fmtu42xdq" path="res://sprites/root.png" id="1_8xrdd"]
 [ext_resource type="Script" path="res://scenes/tree/Drainer.gd" id="1_cf176"]
 [ext_resource type="Script" path="res://scenes/tree/magnet.gd" id="2_6b3cg"]
+[ext_resource type="Script" path="res://scenes/tree/upgradable.gd" id="4_ewa1n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0jdn"]
 
 [node name="root" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.97174, 95.0283)
 scale = Vector2(5.71021, 12.3299)
 shape = SubResource("CapsuleShape2D_f0jdn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-3.97174, 95.0283)
 rotation = -0.483456
 scale = Vector2(10, 10)
 texture = ExtResource("1_8xrdd")
@@ -29,4 +32,6 @@ type = 0
 [node name="Nutrient Magnet" type="Node" parent="."]
 script = ExtResource("2_6b3cg")
 type = 0
-force = 100
+
+[node name="Upgradable" type="Node" parent="."]
+script = ExtResource("4_ewa1n")
