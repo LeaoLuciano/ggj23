@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmj4tkkqs4ryh"]
+[gd_scene load_steps=3 format=3 uid="uid://cmj4tkkqs4ryh"]
+
+[ext_resource type="Texture2D" uid="uid://1t3ny2vfr3ao" path="res://sprites/seed.png" id="1_hwcgf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyqu2"]
 
 [node name="Seed" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_hwcgf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hyqu2")

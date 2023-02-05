@@ -10,7 +10,6 @@ level = 1
 
 [node name="Level0" type="Node2D" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="Seed" parent="Level0" instance=ExtResource("2_cqfvn")]
 

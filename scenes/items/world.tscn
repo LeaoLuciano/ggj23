@@ -26,6 +26,7 @@ area = Rect2(980, 552, 600, 240)
 spawn_time = 1
 
 [node name="Tree" parent="Simulation" instance=ExtResource("6_2avx7")]
+z_index = 2
 position = Vector2(640, 480)
 
 [node name="sun" parent="Simulation" instance=ExtResource("6_w54ju")]
@@ -64,10 +65,3 @@ texture_filter = 1
 position = Vector2(643, 361)
 scale = Vector2(4, 4)
 texture = ExtResource("8_5twrw")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = 150.0
-offset_top = 520.0
-offset_right = 1252.0
-offset_bottom = 691.0
