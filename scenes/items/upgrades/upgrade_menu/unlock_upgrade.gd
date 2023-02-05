@@ -18,3 +18,5 @@ func _on_button_pressed() -> void:
 		take_resources()
 		match type:
 			"root": upgrade_man.tree.add_root()
+			"leaf": upgrade_man.tree.add_leaf()
+			"levelup": upgrade_man.tree.upgrade()

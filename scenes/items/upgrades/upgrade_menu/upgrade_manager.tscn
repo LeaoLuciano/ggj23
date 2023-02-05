@@ -40,7 +40,7 @@ upgrade_man = NodePath("../../..")
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("4_4ih28")
-type = "root"
+type = "leaf"
 upgrade_man = NodePath("../../..")
 
 [node name="Upgrade3" parent="Sprite2D/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
@@ -57,6 +57,13 @@ size_flags_vertical = 3
 type = "water"
 upgrade_man = NodePath("../../..")
 button_text = "Spawn + Clouds"
+
+[node name="Upgrade5" parent="Sprite2D/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("2_y1ylx")]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("4_4ih28")
+type = "levelup"
+upgrade_man = NodePath("../../..")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
