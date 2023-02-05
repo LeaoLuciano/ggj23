@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhibyip83hy1"]
+
+[ext_resource type="Script" path="res://scenes/tree/Drainer.gd" id="1_8vrtv"]
+[ext_resource type="Script" path="res://scenes/tree/magnet.gd" id="2_5t3bn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2qfbt"]
+
+[node name="leaf" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2qfbt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Water Drainer" type="Node" parent="."]
+script = ExtResource("1_8vrtv")
+type = 1
+
+[node name="Nutrient Drainer" type="Node" parent="."]
+script = ExtResource("1_8vrtv")
+type = 0
+
+[node name="Sun Magnet" type="Node" parent="."]
+script = ExtResource("2_5t3bn")
+type = 2
+force = 100
