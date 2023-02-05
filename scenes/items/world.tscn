@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dibew2ltgf3uo"]
+[gd_scene load_steps=11 format=3 uid="uid://dibew2ltgf3uo"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_ih34y"]
 [ext_resource type="PackedScene" uid="uid://cpbp0lphx2vrn" path="res://scenes/items/counter.tscn" id="3_eq6ta"]
@@ -9,15 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://dl7im48sd816m" path="res://scenes/items/upgrades/upgrade_menu/upgrade_manager.tscn" id="6_ijhpw"]
 [ext_resource type="PackedScene" uid="uid://bub31lxexxuim" path="res://scenes/items/sun.tscn" id="6_w54ju"]
 [ext_resource type="Texture2D" uid="uid://by6xn005y2b0t" path="res://sprites/backgrounduntitled.png" id="8_5twrw"]
+[ext_resource type="AudioStream" uid="uid://bmx47b2cgd1pl" path="res://Sounds/514581__unlistenable__happy-frog.wav" id="10_0cxye"]
 
 [node name="World" type="Node2D" groups=["world"]]
-z_index = -1
 script = ExtResource("1_ih34y")
 
 [node name="Simulation" type="Node2D" parent="." groups=["simulation"]]
-
-[node name="Tree" parent="Simulation" instance=ExtResource("6_2avx7")]
-position = Vector2(640, 480)
 
 [node name="Nutrient" parent="Simulation" instance=ExtResource("5_rk3o0")]
 position = Vector2(757, 567)
@@ -30,7 +27,6 @@ area = Rect2(980, 552, 600, 240)
 spawn_time = 1
 
 [node name="Tree" parent="Simulation" instance=ExtResource("6_2avx7")]
-z_index = 2
 position = Vector2(640, 480)
 
 [node name="sun" parent="Simulation" instance=ExtResource("6_w54ju")]
@@ -55,19 +51,12 @@ type_name = "S"
 [node name="Spawners" type="Node2D" parent="."]
 
 [node name="Nutrient Spawner" parent="Spawners" instance=ExtResource("4_vvy3u")]
-area = Rect2(150, 520, 1252, 411)
 
-[node name="CloudSpawner" parent="Spawners" instance=ExtResource("4_vvy3u")]
-scene = ExtResource("4_3x06h")
-area = Rect2(30, 25, 260, 243)
-
-[node name="UpgradeMenu" parent="." node_paths=PackedStringArray("nutrient_counter", "water_counter", "sun_counter", "tree", "nutrient_spawner", "cloud_spawner") instance=ExtResource("6_ijhpw")]
+[node name="UpgradeMenu" parent="." node_paths=PackedStringArray("nutrient_counter", "water_counter", "sun_counter", "tree") instance=ExtResource("6_ijhpw")]
 nutrient_counter = NodePath("../Counters/Nutrient Counter")
 water_counter = NodePath("../Counters/WaterCounter")
 sun_counter = NodePath("../Counters/SunCounter")
 tree = NodePath("../Simulation/Tree")
-nutrient_spawner = NodePath("../Spawners/Nutrient Spawner")
-cloud_spawner = NodePath("../Spawners/CloudSpawner")
 
 [node name="Backgrounduntitled" type="Sprite2D" parent="."]
 z_index = -2
@@ -75,3 +64,10 @@ texture_filter = 1
 position = Vector2(643, 361)
 scale = Vector2(4, 4)
 texture = ExtResource("8_5twrw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0cxye")
+volume_db = -1.0
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
