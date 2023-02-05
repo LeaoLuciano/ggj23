@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dibew2ltgf3uo"]
+[gd_scene load_steps=9 format=3 uid="uid://dibew2ltgf3uo"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_ih34y"]
 [ext_resource type="PackedScene" uid="uid://cpbp0lphx2vrn" path="res://scenes/items/counter.tscn" id="3_eq6ta"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://tmyyosrbi2x7" path="res://scenes/items/nutrient.tscn" id="5_rk3o0"]
 [ext_resource type="PackedScene" uid="uid://corrg6ek0avtm" path="res://scenes/tree/tree.tscn" id="6_2avx7"]
 [ext_resource type="PackedScene" uid="uid://dl7im48sd816m" path="res://scenes/items/upgrades/upgrade_menu/upgrade_manager.tscn" id="6_ijhpw"]
+[ext_resource type="Texture2D" uid="uid://by6xn005y2b0t" path="res://sprites/backgrounduntitled.png" id="8_5twrw"]
 
 [node name="World" type="Node2D" groups=["world"]]
 script = ExtResource("1_ih34y")
@@ -50,3 +51,10 @@ type_name = "S"
 nutrient_counter = NodePath("../Counters/Nutrient Counter")
 water_counter = NodePath("../Counters/WaterCounter")
 sun_counter = NodePath("../Counters/SunCounter")
+
+[node name="Backgrounduntitled" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(643, 361)
+scale = Vector2(4, 4)
+texture = ExtResource("8_5twrw")

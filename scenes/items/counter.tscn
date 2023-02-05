@@ -1,18 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpbp0lphx2vrn"]
+[gd_scene load_steps=4 format=3 uid="uid://cpbp0lphx2vrn"]
 
 [ext_resource type="Script" path="res://scenes/items/counter.gd" id="1_qicnn"]
+[ext_resource type="Texture2D" uid="uid://ksoe2w6w2ytk" path="res://scenes/items/upgrades/upgrade_menu/upgrade_button.png" id="2_jk1f2"]
+[ext_resource type="FontFile" uid="uid://bi3tnblb077t8" path="res://fonts/monogram-extended.ttf" id="3_hyx8o"]
 
 [node name="Counter" type="Node2D" node_paths=PackedStringArray("resource_amount")]
 script = ExtResource("1_qicnn")
-resource_amount = NodePath("ColorRect/Label")
+resource_amount = NodePath("Sprite2D/Label")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 119.0
-offset_bottom = 40.0
-color = Color(0.384314, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(59.5, 20)
+scale = Vector2(1.23958, 1.25)
+texture = ExtResource("2_jk1f2")
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_right = 119.0
-offset_bottom = 39.0
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -47.0
+offset_top = -15.0
+offset_right = 47.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("3_hyx8o")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
