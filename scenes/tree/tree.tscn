@@ -1,49 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://corrg6ek0avtm"]
+[gd_scene load_steps=6 format=3 uid="uid://corrg6ek0avtm"]
 
 [ext_resource type="Script" path="res://scenes/tree/tree.gd" id="1_iyqtl"]
 [ext_resource type="PackedScene" uid="uid://cmj4tkkqs4ryh" path="res://scenes/tree/seed.tscn" id="2_cqfvn"]
 [ext_resource type="PackedScene" uid="uid://1d5xp62qneid" path="res://scenes/tree/root.tscn" id="3_d2jtl"]
 [ext_resource type="PackedScene" uid="uid://bhibyip83hy1" path="res://scenes/tree/leaf.tscn" id="4_dc02f"]
+[ext_resource type="Texture2D" uid="uid://dl2tsbbqdg3t2" path="res://sprites/trunk.png" id="5_ftynk"]
 
 [node name="Tree" type="Node2D"]
 script = ExtResource("1_iyqtl")
-level = 1
 
 [node name="Level0" type="Node2D" parent="."]
 unique_name_in_owner = true
+z_index = -1
 
 [node name="Seed" parent="Level0" instance=ExtResource("2_cqfvn")]
+z_index = -2
 
 [node name="Level1" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
+
+[node name="trunk" type="Sprite2D" parent="Level1"]
+texture_filter = 1
+position = Vector2(0, -29)
+scale = Vector2(2, 2)
+texture = ExtResource("5_ftynk")
 
 [node name="root1" parent="Level1" instance=ExtResource("3_d2jtl")]
 visible = false
-position = Vector2(-10, 9)
+position = Vector2(-7, 2)
 rotation = 1.0472
 scale = Vector2(0.5, 0.5)
 
 [node name="root3" parent="Level1" instance=ExtResource("3_d2jtl")]
 visible = false
-position = Vector2(-6, 4)
+position = Vector2(-3, -3)
 rotation = -1.0472
 scale = Vector2(0.5, 0.5)
 
 [node name="root2" parent="Level1" instance=ExtResource("3_d2jtl")]
 visible = false
-position = Vector2(-1, 4)
+position = Vector2(2, -3)
 rotation = 0.00517797
 scale = Vector2(0.5, 0.5)
 
 [node name="leaf1" parent="Level1" instance=ExtResource("4_dc02f")]
 visible = false
-position = Vector2(-45, -97)
+position = Vector2(-4, -58)
 scale = Vector2(4, 4)
 
 [node name="leaf2" parent="Level1" instance=ExtResource("4_dc02f")]
 visible = false
-position = Vector2(44, -95)
+position = Vector2(4, -58)
 scale = Vector2(-4, 4)
 
-[node name="trunk" type="Sprite2D" parent="Level1"]
+[node name="Level2" type="Node2D" parent="."]
 visible = false
+
+[node name="trunk2" type="Sprite2D" parent="Level2"]
+z_index = -1
+texture_filter = 1
+position = Vector2(-2.38419e-07, -80)
+scale = Vector2(5, 5)
+texture = ExtResource("5_ftynk")
+
+[node name="root4" parent="Level2" instance=ExtResource("3_d2jtl")]
+visible = false
+position = Vector2(-3, -3)
+rotation = 0.512223
+scale = Vector2(0.5, 0.5)
+
+[node name="root5" parent="Level2" instance=ExtResource("3_d2jtl")]
+visible = false
+position = Vector2(2, -3)
+rotation = -0.387767
+scale = Vector2(-0.5, 0.5)
+
+[node name="leaf3" parent="Level2" instance=ExtResource("4_dc02f")]
+visible = false
+position = Vector2(-2, -153)
+rotation = 0.303976
+scale = Vector2(4, 4)
+
+[node name="leaf4" parent="Level2" instance=ExtResource("4_dc02f")]
+visible = false
+position = Vector2(5.00001, -150)
+rotation = -0.385341
+scale = Vector2(-4, 4)

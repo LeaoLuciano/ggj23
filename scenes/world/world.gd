@@ -10,5 +10,4 @@ func _process(delta):
 	pass
 
 func inform_resource(resource : Recurso):
-	print("INFORMADO")
 	new_resource.emit(resource)

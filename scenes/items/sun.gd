@@ -20,7 +20,6 @@ func _process(delta):
 	if sin(angle) > 0:
 		angle += 0.01
 	position = Vector2(x, y)
-	print(position)
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and delay == false:

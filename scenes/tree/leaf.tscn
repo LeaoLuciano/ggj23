@@ -9,11 +9,13 @@
 [node name="leaf" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -6)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_2qfbt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-10, -6)
 texture = ExtResource("1_dp3u1")
 
 [node name="Water Drainer" type="Node" parent="."]
