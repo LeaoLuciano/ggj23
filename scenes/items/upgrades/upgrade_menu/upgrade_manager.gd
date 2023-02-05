@@ -12,6 +12,9 @@ var water_production_rate : int = 0
 var sun_counter : Node2D
 var sun_production_rate : int = 0
 
+@export
+var tree : Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

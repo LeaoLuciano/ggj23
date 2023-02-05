@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl7im48sd816m"]
+[gd_scene load_steps=7 format=3 uid="uid://dl7im48sd816m"]
 
 [ext_resource type="Texture2D" uid="uid://de6htejo3hw7g" path="res://scenes/items/upgrades/upgrade_menu/upgrade_menu.png.png" id="1_qs1es"]
 [ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/upgrade_manager.gd" id="1_uj27u"]
 [ext_resource type="PackedScene" uid="uid://i83qiw33mmc6" path="res://scenes/items/upgrades/upgrade_menu/upgrade.tscn" id="2_y1ylx"]
 [ext_resource type="Script" path="res://scenes/items/upgrades/upgrade_menu/tabs_buttons.gd" id="3_kl1r8"]
 [ext_resource type="FontFile" uid="uid://bi3tnblb077t8" path="res://fonts/monogram-extended.ttf" id="4_8m8px"]
+[ext_resource type="PackedScene" uid="uid://fwjbyad2sfer" path="res://scenes/items/upgrades/upgrade_menu/unlock_upgrade.tscn" id="6_v6uqv"]
 
 [node name="UpgradeManager" type="Control"]
 layout_mode = 3
@@ -80,6 +81,12 @@ type = "nutrient"
 production_rate = 10
 upgrade_man = NodePath("../../../..")
 button_text = "+10 nutrientes/s"
+
+[node name="RootUpgrade" parent="Sprite2D/TreeUpgrades/VBoxContainer" node_paths=PackedStringArray("upgrade_man") instance=ExtResource("6_v6uqv")]
+layout_mode = 2
+type = "root"
+upgrade_man = NodePath("../../../..")
+button_text = "Root"
 
 [node name="NutrientUpgrades" type="ScrollContainer" parent="Sprite2D"]
 visible = false

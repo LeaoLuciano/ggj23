@@ -1,4 +1,5 @@
 extends Node
+class_name Upgrade
 
 @export
 var type : String
@@ -27,7 +28,7 @@ func can_buy() -> bool:
 	var water_amount = upgrade_man.water_counter.count
 	var sun_amount = upgrade_man.sun_counter.count
 	if nutrient_amount >= nutrient_cost and water_amount >= water_cost and sun_amount >= sun_cost:
-		print("Purchased upgrade " + str(type) + " - " + str(production_rate))
+		print("Purchased upgrade " + str(type))
 		return true
 	else:
 		print("Not enough resources")

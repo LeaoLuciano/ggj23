@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/items/sun.gd" id="1_tba2c"]
 [ext_resource type="PackedScene" uid="uid://55nmaykt4xso" path="res://scenes/items/sunbeam.tscn" id="2_v03oo"]
-[ext_resource type="Texture2D" uid="uid://cnshwoikxxk8w" path="res://icon.svg" id="2_xtuhp"]
+[ext_resource type="Texture2D" uid="uid://dyaxauyuehq7v" path="res://sprites/sun.png" id="3_3abd8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2eppb"]
 
@@ -14,9 +14,11 @@ orbit_speed = 0.5
 sunbeam_scene = ExtResource("2_v03oo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
 rotation = -1.5708
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_xtuhp")
+scale = Vector2(3, 2.64)
+texture = ExtResource("3_3abd8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4.58337, 4.58337)
